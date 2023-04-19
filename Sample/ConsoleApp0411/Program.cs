@@ -58,7 +58,7 @@ namespace ConsoleApp0411 {
             Console.WriteLine("五百円玉:" + Change / 500 + "枚");
             Change %= 500;
 
-            Console.WriteLine(c + Change / 100 + "枚");
+            Console.WriteLine("百円玉" + Change / 100 + "枚");
             Change %= 100;
 
             Console.WriteLine("五十円玉:" + Change / 50 + "枚");
