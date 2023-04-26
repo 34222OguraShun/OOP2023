@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BallApp {
     class SoccerBall : Obj{
@@ -13,6 +14,12 @@ namespace BallApp {
 
         Random random = new Random();   //乱数インスタンス
 
+
+        //プロパティ
+
+        public static int Count { get => count; set => count = value; }
+
+
         //コンストラクタ
         public SoccerBall(double xp, double yp):base(xp,yp, @"pic\soccer_ball.png") {
 
@@ -21,18 +28,18 @@ namespace BallApp {
 
             int rndY = random.Next(-25, 25);
             MoveY = (rndY != 0 ? rndY : 1); //乱数で移動量を設定
+            Count++;
         }
 
-        //プロパティ
         
-        public static int Count { get => count; set => count = value; }
 
         //メソッド
-        public override void Move() {
+        public override void Move(PictureBox pbBar, PictureBox pbBall) {
 
-            Console.WriteLine("Ｘ座標 = {0}, Ｙ座標 = {1}", PosX, PosY);
+            Rectangle rBar = new Rectangle(pbBar.Location.X, pbBar.Location.Y, pbBar.Width, pbBar.Height);
+            Rectangle rBall = new Rectangle(pbBall.Location.X, pbBall.Location.Y, pbBall.Width, pbBall.Height) ;
 
-            if (PosY > 520 || PosY < 0)
+            if (PosY > 520 || PosY < 0 || rBar.IntersectsWith(rBall))
             {
                 MoveY = -MoveY;
             }
@@ -43,6 +50,9 @@ namespace BallApp {
             }
             PosX += MoveX;
             PosY += MoveY;
+        }
+        public override void Move(Keys direction) {
+            ;
         }
     }
 }
