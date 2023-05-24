@@ -10,20 +10,20 @@ namespace Exercrise01 {
 
             var numbers = new List<int> { 12, 87, 94, 14, 53, 20, 40, 35, 76, 91, 31, 17, 48 };
             Exercrise1_1(numbers);
-            Console.WriteLine();
+            Console.WriteLine("---------------");
 
             Exercrise1_2(numbers);
-            Console.WriteLine();
+            Console.WriteLine("---------------");
 
             Exercrise1_3(numbers);
-            Console.WriteLine();
+            Console.WriteLine("---------------");
 
             Exercrise1_4(numbers);
-            Console.WriteLine();
+            Console.WriteLine("---------------");
         }
 
         private static void Exercrise1_1(List<int> numbers) {
-            var exist = numbers.Exists(n => n/8 == 0 && n / 9 == 0);
+            var exist = numbers.Exists(n => n % 8 == 0|| n %9 == 0);
             if (exist) {
                 Console.WriteLine("存在しています");
             }else {
@@ -32,15 +32,22 @@ namespace Exercrise01 {
         }
 
         private static void Exercrise1_2(List<int> numbers) {
-            
+            foreach (var s in numbers) {
+                Console.WriteLine(s/2.0);
+            }
         }
 
         private static void Exercrise1_3(List<int> numbers) {
-            
+            foreach (var s in numbers.Where(n => n >= 50)) {
+                Console.WriteLine(s);
+            }
         }
 
         private static void Exercrise1_4(List<int> numbers) {
-            
+            var list = numbers.Select(n => n * 2).ToList();
+            foreach (var item in list) {
+                Console.WriteLine(item + " ");
+            }
         }
     }
 }

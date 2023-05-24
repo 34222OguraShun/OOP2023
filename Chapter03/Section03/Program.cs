@@ -15,8 +15,11 @@ namespace Section03 {
             //var name = list.Find(s => s.Length == 6);
             //Console.WriteLine(name);
         
-            var names = list.FindAll(s => s.Length <= 5);
-            names.ForEach(s  => Console.WriteLine(s)); 
+            //var names = list.FindAll(s => s.Length <= 5);
+            //names.ForEach(s  => Console.WriteLine(s));
+
+            var names = list.ConvertAll(s => s.ToLower());
+            names.ForEach(s => Console.WriteLine(s));
         }
     }
 }
