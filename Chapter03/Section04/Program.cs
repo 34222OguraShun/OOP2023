@@ -9,9 +9,17 @@ namespace Section04 {
         static void Main(string[] args) {
             var names = new List<string> { "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong kong" };
 
-            IEnumerable<string> query = names.Where(s => s.Length <= 5).Select(s => s.ToLower());
-            foreach (var s in query) {
-                Console.WriteLine(s);
+            var query = names.Where(s => s.Length <= 5);
+
+            foreach (var item in query) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("------------");
+
+            names[0] = "Osaka";
+
+            foreach (var item in query) {
+                Console.WriteLine(item);
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Exercrise01 {
         }
 
         private static void Exercrise1_1(List<int> numbers) {
-            var exist = numbers.Exists(n => n % 8 == 0|| n %9 == 0);
+            var exist = numbers.Exists(n => n % 8 == 0|| n % 9 == 0);
             if (exist) {
                 Console.WriteLine("存在しています");
             }else {

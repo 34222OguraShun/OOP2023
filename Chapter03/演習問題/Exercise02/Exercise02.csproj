@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9FB27BD4-F209-402E-A8B9-8D87F9E9358E}</ProjectGuid>
+    <ProjectGuid>{96E18B63-4988-4E6E-BF0B-6CF5CA804FB6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Exercise02</RootNamespace>
     <AssemblyName>Exercise02</AssemblyName>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InchConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
