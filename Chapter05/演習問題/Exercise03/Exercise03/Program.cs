@@ -26,7 +26,7 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_1(string target) {
-            var count = target.Count(n => n.ToString().Contains(' '));    
+            var count = target.Count(c => c.ToString().Contains(' '));    
             Console.WriteLine(count);
         }
 
@@ -46,9 +46,14 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_4(string target) {
-
+            var list = new List<string> { "Jackdaws", "love", "my", "big", "sphinx", "of", "quartz" };
+            var names = list.FindAll(s => s.Length <= 4);
+            foreach (var item in names) {
+                Console.WriteLine(item);
+            }
+            
+            
         }
-
         private static void Exercise3_5(string text) {
 
         }
