@@ -65,6 +65,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "演習問題", "演習問�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "Chapter05\演習問題\Exercise01\Exercise01.csproj", "{F8CF0EE4-F948-4ADA-8830-02E8A6265C6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise02", "Chapter05\演習問題\Exercise02\Exercise02\Exercise02.csproj", "{7CED3C68-AC33-4FFD-99BD-09139CB23282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise03", "Chapter05\演習問題\Exercise03\Exercise03\Exercise03.csproj", "{235260D9-3C44-460C-BBF9-15EA57C86982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +143,14 @@ Global
 		{F8CF0EE4-F948-4ADA-8830-02E8A6265C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CF0EE4-F948-4ADA-8830-02E8A6265C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CF0EE4-F948-4ADA-8830-02E8A6265C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CED3C68-AC33-4FFD-99BD-09139CB23282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CED3C68-AC33-4FFD-99BD-09139CB23282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CED3C68-AC33-4FFD-99BD-09139CB23282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CED3C68-AC33-4FFD-99BD-09139CB23282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235260D9-3C44-460C-BBF9-15EA57C86982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235260D9-3C44-460C-BBF9-15EA57C86982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235260D9-3C44-460C-BBF9-15EA57C86982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235260D9-3C44-460C-BBF9-15EA57C86982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +181,8 @@ Global
 		{B2CC3F4C-D168-45FF-BFC5-290332B56493} = {D6E4BCEC-BEBF-4B0C-A48E-5F21C082AA01}
 		{202536CD-BEC4-4D67-B507-5BD36E32B2FB} = {8EBE1581-2A2B-4DE3-B55F-EFD50F865092}
 		{F8CF0EE4-F948-4ADA-8830-02E8A6265C6B} = {202536CD-BEC4-4D67-B507-5BD36E32B2FB}
+		{7CED3C68-AC33-4FFD-99BD-09139CB23282} = {202536CD-BEC4-4D67-B507-5BD36E32B2FB}
+		{235260D9-3C44-460C-BBF9-15EA57C86982} = {202536CD-BEC4-4D67-B507-5BD36E32B2FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01C09EB8-86E9-4237-8533-7BFDE2339810}
