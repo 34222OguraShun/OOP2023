@@ -28,11 +28,11 @@ namespace Exercise03 {
         private static void Exercise3_1(string target) {
             var count = target.Count(n => n.ToString().Contains(' '));    
             Console.WriteLine(count);
-
         }
 
         private static void Exercise3_2(string target) {
-
+            var replaced = target.Replace("big", "small");
+            Console.WriteLine(replaced);
         }
 
         private static void Exercise3_3(string target) {
