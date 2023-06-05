@@ -36,13 +36,8 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_3(string target) {
-            var num = 0;
-            var count = target.Count(n => n.ToString().Contains(' '));
-            for (int i = 0; i < target.Length; i++) {
-                num += 1;
-            }
-            num -= count;
-            Console.WriteLine(num);
+            int count = target.Split(' ').Length;
+            Console.WriteLine("単語数：{0}", count);
         }
 
         private static void Exercise3_4(string target) {
@@ -51,11 +46,24 @@ namespace Exercise03 {
             foreach (var item in names) {
                 Console.WriteLine(item);
             }
-            
-            
+            //var words = target.Split(' ').Where(word => word.Length <= 4);
+            //foreach (var word in words) {
+            //    Console.WriteLine(word);
+            //}
         }
-        private static void Exercise3_5(string text) {
 
+        private static void Exercise3_5(string target) {
+            var array = target.Split(' ').ToArray();
+
+            //var sb = new StringBuilder();
+            //sb.Append(array[0]);
+            var sb = new StringBuilder(array[0]);
+            foreach (var word in array.Skip(1)) {
+                sb.Append(' ');
+                sb.Append(word);
+            }
+            var createWords = sb.ToString();
+            Console.WriteLine(createWords);
         }
     }
 }
