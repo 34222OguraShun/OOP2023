@@ -36,7 +36,13 @@ namespace Exercise03 {
         }
 
         private static void Exercise3_3(string target) {
-
+            var num = 0;
+            var count = target.Count(n => n.ToString().Contains(' '));
+            for (int i = 0; i < target.Length; i++) {
+                num += 1;
+            }
+            num -= count;
+            Console.WriteLine(num);
         }
 
         private static void Exercise3_4(string target) {
