@@ -20,14 +20,17 @@ namespace Section01 {
 
             // var booksObj = books.Where(x => x.Pages >= 500).OrderByDescending(x => x.Price);
 
-            var booksObj = books.Where(x => x.Title.Contains("物語")).Average(x => x.Pages);
-                //OrderByDescending(x => x.Pages);
-            
-//            foreach (var book in booksObj) {
-//                Console.WriteLine("{0}:{1}",book.Title,book.Price);
-//            }
+            //var booksObj = books.Where(x => x.Title.Contains("物語")).OrderByDescending(x => x.Price);
+            //            foreach (var book in booksObj) {
+            //                Console.WriteLine("{0}:{1}",book.Title,book.Price);
+            //            }
 
-            Console.WriteLine("ページ平均："+booksObj);
+            //物語が付いた本のページ平均
+            //var booksP = books.Where(x => x.Title.Contains("物語")).Average(x => x.Pages);
+            //Console.WriteLine("ページ平均："+booksP);
+
+            var booksP = books.Where(x => x.Title.Contains("物語")).Average(x => x.Pages);
+
         }
     }
 }
