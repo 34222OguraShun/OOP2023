@@ -10,13 +10,15 @@ namespace Exercise04 {
 
 #if NonArray
             var line = "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886";
-            var words = line.Split(';','=');
-            var Novelist = "作家　：" + words[1];
-            var BestWork = "代表作：" + words[3];
-            var Born = "誕生日：" + words[5];
-            Console.WriteLine(Novelist);
-            Console.WriteLine(BestWork);
-            Console.WriteLine(Born);
+
+
+            //var words = line.Split(';','=');
+            //var Novelist = "作家　：" + words[1];
+            //var BestWork = "代表作：" + words[3];
+            //var Born = "誕生日：" + words[5];
+            //Console.WriteLine(Novelist);
+            //Console.WriteLine(BestWork);
+            //Console.WriteLine(Born);
 #elif StringArray
             string[] lines = {
                 "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886",
@@ -27,7 +29,10 @@ namespace Exercise04 {
 #endif
 
 #if NonArray
-
+            foreach (var pair in line.Split(';')) {
+                var array = pair.Split('=');
+                Console.WriteLine("{0}:{1}", array[0], array[1]);
+            }
 
 #elif StringArray
 
@@ -35,5 +40,16 @@ namespace Exercise04 {
 #endif
 
         }
+
+     //   static string ToJapanese(string Key) {
+     //       switch (Key) {
+     //           case "Novelist":
+     //               return "作家　：";
+     //           case ";BestWork":
+     //              return "代表作：";
+     //        case "Born":
+     //          return "誕生日：";
+     //}
+     //}
     }
 }
