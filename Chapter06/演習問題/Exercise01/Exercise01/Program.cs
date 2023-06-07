@@ -32,14 +32,26 @@ namespace Exercise01 {
         private static void Exercise1_2(int[] numbers) {
             Console.WriteLine(numbers[numbers.Length-1]);
             Console.WriteLine(numbers[numbers.Length-2]);
+
+        //    var skip = numbers.Length - 2;
+        //    foreach (var n in numbers.Skip(skip)) {
+        //        Console.WriteLine(n);
+        //    }
         }
 
         private static void Exercise1_3(int[] numbers) {
-            
+            numbers.ToString();
+            foreach (var item in numbers) {
+                Console.Write(item+" ");
+            }
+            Console.WriteLine();
+        
+            //var str = 
+        
         }
 
         private static void Exercise1_4(int[] numbers) {
-            
+           // var small = numbers.Where(s => numbers.OrderBy());
         }
 
         private static void Exercise1_5(int[] numbers) {
