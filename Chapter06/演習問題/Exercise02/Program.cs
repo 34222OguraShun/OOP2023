@@ -41,19 +41,27 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<Book> books) {
-            
+            var book = books.Where(x => x.Title =="ワンダフル・C#ライフ");
+            foreach (var item in book) {
+                Console.WriteLine("{0}  {1}",item.Price, item.Pages);
+            }
         }
 
         private static void Exercise2_2(List<Book> books) {
-            
+            var count = books.Count(x => x.Title.Contains("C#"));
+            Console.WriteLine(count+"冊");
         }
 
         private static void Exercise2_3(List<Book> books) {
-            
+            var count = books.Where(x => x.Title.Contains("C#")).Average(b=>b.Pages);
+            Console.WriteLine(count + "ページ");
         }
 
         private static void Exercise2_4(List<Book> books) {
-            
+            var book = books.First(b => b.Price >= 4000);
+            if (book != null) {
+                Console.WriteLine("{0}  {1}", book.Price, book.Pages);
+            }
         }
 
         private static void Exercise2_5(List<Book> books) {
