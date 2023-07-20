@@ -59,10 +59,13 @@ namespace CarReportSystem {
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdImageFileOpen = new System.Windows.Forms.OpenFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsInfoText = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -284,7 +287,7 @@ namespace CarReportSystem {
             this.dgvCarReports.ReadOnly = true;
             this.dgvCarReports.RowTemplate.Height = 21;
             this.dgvCarReports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarReports.Size = new System.Drawing.Size(615, 188);
+            this.dgvCarReports.Size = new System.Drawing.Size(615, 158);
             this.dgvCarReports.TabIndex = 8;
             // 
             // label6
@@ -391,7 +394,7 @@ namespace CarReportSystem {
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(726, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(723, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -442,12 +445,31 @@ namespace CarReportSystem {
             // 
             this.ofdImageFileOpen.FileName = "openFileDialog1";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsInfoText});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 556);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(723, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsInfoText
+            // 
+            this.tsInfoText.Name = "tsInfoText";
+            this.tsInfoText.Size = new System.Drawing.Size(118, 17);
+            this.tsInfoText.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(726, 589);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(723, 578);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btDeleteReport);
             this.Controls.Add(this.btModifyReport);
             this.Controls.Add(this.btAddReport);
@@ -469,8 +491,11 @@ namespace CarReportSystem {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "カーレポート管理システム";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -480,6 +505,8 @@ namespace CarReportSystem {
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,6 +549,8 @@ namespace CarReportSystem {
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 終了XToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog ofdImageFileOpen;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsInfoText;
     }
 }
 
