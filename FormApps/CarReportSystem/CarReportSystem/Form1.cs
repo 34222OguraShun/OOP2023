@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarReportSystem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
         //管理用データ
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
         private int mode;
+
+        //
+        Settings settings = new Settings();
 
         public Form1() {
             InitializeComponent();
@@ -130,6 +136,11 @@ namespace CarReportSystem {
             btModifyReport.Enabled = false; //修正ボタン無効
             btDeleteReport.Enabled = false; //削除ボタン無効
 
+            //設定ファイルを逆シリアル化して背景を設定
+            using (var reader = XmlReader.Create("setting.xml")) {
+                var serializer = new XmlSerializer(typeof(Settings));
+                //settings = serializer
+            }
         }
 
         //削除ボタンイベントハンドラ
@@ -181,14 +192,24 @@ namespace CarReportSystem {
         private void カラーToolStripMenuItem_Click(object sender, EventArgs e) {
             if(cdColor.ShowDialog() == DialogResult.OK) {
                 BackColor = cdColor.Color;
+                settings.MainFormColor = cdColor.Color.ToArgb();
             }
         }
 
         private void btScaleChange_Click(object sender, EventArgs e) {
+           // pbCarImage.SizeMode = mode < PictureBoxSizeMode.Zoom ? ((mode == PictureBoxSizeMode.StretchImage) ? PictureBoxSizeMode.CenterImage : ++mode) :
+             //                                                                                                       PictureBoxSizeMode.Normal;
 
-            mode = mode < 4 ? ++mode : 0;
-            pbCarImage.SizeMode = (PictureBoxSizeMode)mode;
+        }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+
+            //設定のシリアル化
+            using (var writer = XmlWriter.Create("settings.xml")) {
+                var serialzer = new XmlSerializer(settings.GetType());
+                serialzer.Serialize(writer, settings);
+            }
+            
         }
     }
 }
