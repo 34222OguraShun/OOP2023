@@ -24,36 +24,36 @@ namespace CarReportSystem {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btok = new System.Windows.Forms.Button();
+            this.btOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btok
+            // btOk
             // 
-            this.btok.Location = new System.Drawing.Point(99, 40);
-            this.btok.Name = "btok";
-            this.btok.Size = new System.Drawing.Size(75, 23);
-            this.btok.TabIndex = 0;
-            this.btok.Text = "ok";
-            this.btok.UseVisualStyleBackColor = true;
-            this.btok.Click += new System.EventHandler(this.btok_Click);
+            this.btOk.Location = new System.Drawing.Point(98, 80);
+            this.btOk.Name = "btOk";
+            this.btOk.Size = new System.Drawing.Size(91, 29);
+            this.btOk.TabIndex = 0;
+            this.btOk.Text = "OK";
+            this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // VersionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 105);
-            this.Controls.Add(this.btok);
+            this.ClientSize = new System.Drawing.Size(302, 121);
+            this.Controls.Add(this.btOk);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VersionForm";
             this.Text = "VersionForm";
-            this.Load += new System.EventHandler(this.VersionForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btok;
+        private System.Windows.Forms.Button btOk;
     }
 }

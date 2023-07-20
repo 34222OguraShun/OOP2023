@@ -14,11 +14,7 @@ namespace CarReportSystem {
             InitializeComponent();
         }
 
-        private void VersionForm_Load(object sender, EventArgs e) {
-
-        }
-
-        private void btok_Click(object sender, EventArgs e) {
+        private void btOk_Click(object sender, EventArgs e) {
             this.Close();
         }
     }
