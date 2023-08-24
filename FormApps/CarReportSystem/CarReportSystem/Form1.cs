@@ -132,6 +132,11 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            tsInfoText.Text = ""; //情報表示領域のテキストを初期化
+            //tsTimeDisp.BackClor = Color.Black;
+            //tsTimeDisp.ForeClor = Color.Black;
+            //tmTimeUpdate.Start();
+
             dgvCarReports.Columns[5].Visible = false;   //画像項目非表示
             btModifyReport.Enabled = false; //修正ボタン無効
             btDeleteReport.Enabled = false; //削除ボタン無効
