@@ -142,10 +142,10 @@ namespace CarReportSystem {
             btDeleteReport.Enabled = false; //削除ボタン無効
 
             //設定ファイルを逆シリアル化して背景を設定
-            //using (var reader = XmlReader.Create("setting.xml")) {
-            //  var serializer = new XmlSerializer(typeof(Settings));
-                //settings = serializer
-    //        }
+            using (var reader = XmlReader.Create("setting.xml")) {
+              var serializer = new XmlSerializer(typeof(Settings));
+                
+           }
         }
 
         //削除ボタンイベントハンドラ
