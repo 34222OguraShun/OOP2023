@@ -1,10 +1,11 @@
-﻿using CarReportSystem.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +16,9 @@ namespace CarReportSystem {
     public partial class Form1 : Form {
         //管理用データ
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
-        private int mode;
+        private PictureBoxSizeMode mode;
 
-        //
+        //設定情報保存用オブジェクト
         Settings settings = new Settings();
 
         public Form1() {
@@ -126,26 +127,34 @@ namespace CarReportSystem {
         }
 
         private void btImageOpen_Click(object sender, EventArgs e) {
-            if(ofdImageFileOpen.ShowDialog() == DialogResult.OK) {
-                pbCarImage.Image = Image.FromFile(ofdImageFileOpen.FileName);
-            }                
+            if (ofdCarRepoOpen.ShowDialog() == DialogResult.OK) {
+                pbCarImage.Image = Image.FromFile(ofdCarRepoOpen.FileName);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            tsInfoText.Text = ""; //情報表示領域のテキストを初期化
-            //tsTimeDisp.BackClor = Color.Black;
-            //tsTimeDisp.ForeClor = Color.Black;
-            //tmTimeUpdate.Start();
+
+            tsInfoText.Text = "";   //情報表示領域のテキストを初期化
+            //tsTimeDisp.Text = DateTime.Now.ToString("yyyy年MM月dd日 HH時mm分ss秒");
+            statusDisp.BackColor = Color.Black;
+            statusDisp.ForeColor = Color.White;
+            tmTimeUpdate.Start();   //時刻更新用のタイマー
 
             dgvCarReports.Columns[5].Visible = false;   //画像項目非表示
             btModifyReport.Enabled = false; //修正ボタン無効
             btDeleteReport.Enabled = false; //削除ボタン無効
 
-            //設定ファイルを逆シリアル化して背景を設定
-            using (var reader = XmlReader.Create("setting.xml")) {
-              var serializer = new XmlSerializer(typeof(Settings));
-                
-           }
+            try {
+                //設定ファイルを逆シリアル化して背景を設定
+                using (var reader = XmlReader.Create("settings.xml")) {
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    settings = serializer.Deserialize(reader) as Settings;
+                    BackColor = Color.FromArgb(settings.MainFormColor);
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //削除ボタンイベントハンドラ
@@ -195,26 +204,80 @@ namespace CarReportSystem {
         }
 
         private void カラーToolStripMenuItem_Click(object sender, EventArgs e) {
-            if(cdColor.ShowDialog() == DialogResult.OK) {
+            if (cdColor.ShowDialog() == DialogResult.OK) {
                 BackColor = cdColor.Color;
                 settings.MainFormColor = cdColor.Color.ToArgb();
             }
         }
 
         private void btScaleChange_Click(object sender, EventArgs e) {
-           // pbCarImage.SizeMode = mode < PictureBoxSizeMode.Zoom ? ((mode == PictureBoxSizeMode.StretchImage) ? PictureBoxSizeMode.CenterImage : ++mode) :
-             //                                                                                                       PictureBoxSizeMode.Normal;
+
+            if (mode < PictureBoxSizeMode.Zoom) {
+                if (mode == PictureBoxSizeMode.StretchImage) {
+                    mode = PictureBoxSizeMode.CenterImage;
+                }
+                else {
+                    ++mode;
+                }
+            }
+            else {
+                mode = PictureBoxSizeMode.Normal;
+            }
+
+            pbCarImage.SizeMode = mode;
 
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
 
-            //設定のシリアル化
+            //設定ファイルのシリアル化
             using (var writer = XmlWriter.Create("settings.xml")) {
-                var serialzer = new XmlSerializer(settings.GetType());
-                serialzer.Serialize(writer, settings);
+                var serializer = new XmlSerializer(settings.GetType());
+                serializer.Serialize(writer, settings);
             }
-            
+        }
+
+        private void tmTimeUpdate_Tick(object sender, EventArgs e) {
+            statusDisp.Text = DateTime.Now.ToString("yyyy年MM月dd日 HH時mm分ss秒");
+        }
+
+        private void 保存SToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (sfdCarRepoSave.ShowDialog() == DialogResult.OK) {
+                try {
+                    //バイナリ形式でシリアル化
+                    var bf = new BinaryFormatter();
+                    using (FileStream fs = File.Open(sfdCarRepoSave.FileName, FileMode.Create)) {
+                        bf.Serialize(fs, CarReports);
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void 開くOToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ofdCarRepoOpen.ShowDialog() == DialogResult.OK) {
+                try {
+                    //逆シリアル化でバイナリ形式を取り込む
+                    var bf = new BinaryFormatter();
+                    using (FileStream fs = File.Open(ofdCarRepoOpen.FileName, FileMode.Open, FileAccess.Read)) {
+                        CarReports = (BindingList<CarReport>)bf.Deserialize(fs);
+                        dgvCarReports.DataSource = null;
+                        dgvCarReports.DataSource = CarReports;
+
+                        editItemsClear();//入力途中などのデータはすべてクリア
+                        dgvCarReports.Columns[5].Visible = false;   //画像項目非表示
+                        foreach (var carReport in CarReports) {
+                            setCbAuthor(carReport.Author);
+                            setCbCarName(carReport.CarName);
+                        }
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
