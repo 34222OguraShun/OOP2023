@@ -66,12 +66,12 @@ namespace CarReportSystem {
             this.ofdCarRepoOpen = new System.Windows.Forms.OpenFileDialog();
             this.statusDisp = new System.Windows.Forms.StatusStrip();
             this.tsInfoText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsTimeDisp = new System.Windows.Forms.ToolStripStatusLabel();
             this.cdColor = new System.Windows.Forms.ColorDialog();
             this.btScaleChange = new System.Windows.Forms.Button();
             this.sfdCarRepoSave = new System.Windows.Forms.SaveFileDialog();
             this.tmTimeUpdate = new System.Windows.Forms.Timer(this.components);
-            this.ofdlmageFileOpen = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ofdImageFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).BeginInit();
@@ -300,6 +300,7 @@ namespace CarReportSystem {
             this.dgvCarReports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarReports.Size = new System.Drawing.Size(612, 148);
             this.dgvCarReports.TabIndex = 8;
+            this.dgvCarReports.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarReports_CellClick);
             this.dgvCarReports.Click += new System.EventHandler(this.dgvCarReports_Click);
             // 
             // label6
@@ -482,7 +483,7 @@ namespace CarReportSystem {
             // バージョン情報ToolStripMenuItem
             // 
             this.バージョン情報ToolStripMenuItem.Name = "バージョン情報ToolStripMenuItem";
-            this.バージョン情報ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.バージョン情報ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.バージョン情報ToolStripMenuItem.Text = "バージョン情報";
             this.バージョン情報ToolStripMenuItem.Click += new System.EventHandler(this.バージョン情報ToolStripMenuItem_Click);
             // 
@@ -494,7 +495,7 @@ namespace CarReportSystem {
             // 
             this.statusDisp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsInfoText,
-            this.toolStripStatusLabel1});
+            this.tsTimeDisp});
             this.statusDisp.Location = new System.Drawing.Point(0, 544);
             this.statusDisp.Name = "statusDisp";
             this.statusDisp.Size = new System.Drawing.Size(721, 22);
@@ -507,6 +508,12 @@ namespace CarReportSystem {
             this.tsInfoText.Name = "tsInfoText";
             this.tsInfoText.Size = new System.Drawing.Size(0, 17);
             // 
+            // tsTimeDisp
+            // 
+            this.tsTimeDisp.Name = "tsTimeDisp";
+            this.tsTimeDisp.Size = new System.Drawing.Size(142, 17);
+            this.tsTimeDisp.Text = "時刻表示　インフォメーション";
+            // 
             // btScaleChange
             // 
             this.btScaleChange.Location = new System.Drawing.Point(637, 40);
@@ -517,15 +524,9 @@ namespace CarReportSystem {
             this.btScaleChange.UseVisualStyleBackColor = true;
             this.btScaleChange.Click += new System.EventHandler(this.btScaleChange_Click);
             // 
-            // ofdlmageFileOpen
+            // ofdImageFileOpen
             // 
-            this.ofdlmageFileOpen.FileName = "openFileDialog1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(142, 17);
-            this.toolStripStatusLabel1.Text = "時刻表示　インフォメーション";
+            this.ofdImageFileOpen.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -623,8 +624,8 @@ namespace CarReportSystem {
         private System.Windows.Forms.Button btScaleChange;
         private System.Windows.Forms.SaveFileDialog sfdCarRepoSave;
         private System.Windows.Forms.Timer tmTimeUpdate;
-        private System.Windows.Forms.OpenFileDialog ofdlmageFileOpen;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.OpenFileDialog ofdImageFileOpen;
+        private System.Windows.Forms.ToolStripStatusLabel tsTimeDisp;
     }
 }
 
