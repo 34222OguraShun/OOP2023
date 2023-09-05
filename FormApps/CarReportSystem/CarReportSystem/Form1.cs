@@ -19,7 +19,7 @@ namespace CarReportSystem {
         private PictureBoxSizeMode mode;
 
         //設定情報保存用オブジェクト
-        Settings settings = new Settings();
+        Settings settings = Settings.getInstance();
 
         public Form1() {
             InitializeComponent();
@@ -133,7 +133,7 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-
+            
             tsInfoText.Text = "";   //情報表示領域のテキストを初期化
             //tsTimeDisp.Text = DateTime.Now.ToString("yyyy年MM月dd日 HH時mm分ss秒");
             statusDisp.BackColor = Color.Black;
@@ -279,5 +279,18 @@ namespace CarReportSystem {
                 }
             }
         }
+
+        private void carReportTableBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.carReportTableBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202323DataSet);
+
+        }
+
+        private void btConnection_Click(object sender, EventArgs e) {
+            // TODO: このコード行はデータを 'infosys202323DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.carReportTableTableAdapter.Fill(this.infosys202323DataSet.CarReportTable);
+        }
+
     }
 }
