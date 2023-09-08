@@ -67,7 +67,7 @@ namespace CarReportSystem {
             this.ofdCarRepoOpen = new System.Windows.Forms.OpenFileDialog();
             this.statusDisp = new System.Windows.Forms.StatusStrip();
             this.tsInfoText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsTimeDisp = new System.Windows.Forms.ToolStripStatusLabel();
             this.cdColor = new System.Windows.Forms.ColorDialog();
             this.btScaleChange = new System.Windows.Forms.Button();
             this.sfdCarRepoSave = new System.Windows.Forms.SaveFileDialog();
@@ -99,6 +99,9 @@ namespace CarReportSystem {
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btConnection = new System.Windows.Forms.Button();
+            this.infosys202323DataSet1 = new CarReportSystem.infosys202323DataSet();
+            this.ofdImageFileOpen = new System.Windows.Forms.OpenFileDialog();
+            this.infosys202323DataSet2 = new CarReportSystem.infosys202323DataSet();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).BeginInit();
@@ -109,6 +112,8 @@ namespace CarReportSystem {
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableBindingNavigator)).BeginInit();
             this.carReportTableBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -460,31 +465,31 @@ namespace CarReportSystem {
             // 
             this.開くOToolStripMenuItem.Name = "開くOToolStripMenuItem";
             this.開くOToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.開くOToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.開くOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.開くOToolStripMenuItem.Text = "開く(&O)...";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 保存SToolStripMenuItem
             // 
             this.保存SToolStripMenuItem.Name = "保存SToolStripMenuItem";
             this.保存SToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.保存SToolStripMenuItem.Text = "保存(&S)...";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(158, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 終了XToolStripMenuItem
             // 
             this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
             this.終了XToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.終了XToolStripMenuItem.Text = "終了(&X)";
             this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
             // 
@@ -499,7 +504,7 @@ namespace CarReportSystem {
             // カラーToolStripMenuItem
             // 
             this.カラーToolStripMenuItem.Name = "カラーToolStripMenuItem";
-            this.カラーToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.カラーToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.カラーToolStripMenuItem.Text = "色設定...";
             this.カラーToolStripMenuItem.Click += new System.EventHandler(this.カラーToolStripMenuItem_Click);
             // 
@@ -526,7 +531,7 @@ namespace CarReportSystem {
             // 
             this.statusDisp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsInfoText,
-            this.toolStripStatusLabel1});
+            this.tsTimeDisp});
             this.statusDisp.Location = new System.Drawing.Point(0, 556);
             this.statusDisp.Name = "statusDisp";
             this.statusDisp.Size = new System.Drawing.Size(1195, 22);
@@ -539,11 +544,11 @@ namespace CarReportSystem {
             this.tsInfoText.Name = "tsInfoText";
             this.tsInfoText.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripStatusLabel1
+            // tsTimeDisp
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(142, 17);
-            this.toolStripStatusLabel1.Text = "時刻表示　インフォメーション";
+            this.tsTimeDisp.Name = "tsTimeDisp";
+            this.tsTimeDisp.Size = new System.Drawing.Size(142, 17);
+            this.tsTimeDisp.Text = "時刻表示　インフォメーション";
             // 
             // btScaleChange
             // 
@@ -776,6 +781,20 @@ namespace CarReportSystem {
             this.btConnection.UseVisualStyleBackColor = true;
             this.btConnection.Click += new System.EventHandler(this.btConnection_Click);
             // 
+            // infosys202323DataSet1
+            // 
+            this.infosys202323DataSet1.DataSetName = "infosys202323DataSet";
+            this.infosys202323DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ofdImageFileOpen
+            // 
+            this.ofdImageFileOpen.FileName = "openFileDialog1";
+            // 
+            // infosys202323DataSet2
+            // 
+            this.infosys202323DataSet2.DataSetName = "infosys202323DataSet";
+            this.infosys202323DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -829,6 +848,8 @@ namespace CarReportSystem {
             this.carReportTableBindingNavigator.ResumeLayout(false);
             this.carReportTableBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -882,7 +903,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.SaveFileDialog sfdCarRepoSave;
         private System.Windows.Forms.Timer tmTimeUpdate;
         private System.Windows.Forms.OpenFileDialog ofdlmageFileOpen;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tsTimeDisp;
         private infosys202323DataSet infosys202323DataSet;
         private System.Windows.Forms.BindingSource carReportTableBindingSource;
         private infosys202323DataSetTableAdapters.CarReportTableTableAdapter carReportTableTableAdapter;
@@ -909,6 +930,9 @@ namespace CarReportSystem {
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button btConnection;
+        private infosys202323DataSet infosys202323DataSet1;
+        private System.Windows.Forms.OpenFileDialog ofdImageFileOpen;
+        private infosys202323DataSet infosys202323DataSet2;
     }
 }
 
