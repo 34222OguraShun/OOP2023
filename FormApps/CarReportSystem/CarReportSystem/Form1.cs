@@ -43,16 +43,18 @@ namespace CarReportSystem {
                 return;
             }
 
-            var carReport = new CarReport                            //Saleインスタンスを生成
-            {
-                Date = dtpDate.Value,
-                Author = cbAuthor.Text,
-                Maker = getSelectedMaker(),
-                CarName = cbCarName.Text,
-                Report = tbReport.Text,
-                CarImage = pbCarImage.Image,
-            };
-            CarReports.Add(carReport);
+
+            DataRow newRow = infosys202323DataSet.CarReportTable.NewRow();
+            newRow[1] = dtpDate.Value;
+            newRow[2] = cbAuthor.Text;
+            newRow[3] = getSelectedMaker();
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbReport.Text;
+            newRow[6] = ImageToByteArray(pbCarImage.Image);
+
+            infosys202323DataSet.CarReportTable.Rows.Add(newRow);
+        //    this.carReportTableTableAdapter.Update(infosys202323DataSet.CarReportTable);
+      
 
             setCbAuthor(cbAuthor.Text);     //記録者コンボボックスの履歴登録処理
             setCbCarName(cbCarName.Text);   //車名コンボボックスの履歴登録処理
@@ -162,7 +164,9 @@ namespace CarReportSystem {
 
         //削除ボタンイベントハンドラ
         private void btDeleteReport_Click(object sender, EventArgs e) {
-            CarReports.RemoveAt(dgvCarReports.CurrentRow.Index);
+
+            dgvCarReports.Rows.RemoveAt(dgvCarReports.CurrentRow.Index);
+
             editItemsClear();
         }
 

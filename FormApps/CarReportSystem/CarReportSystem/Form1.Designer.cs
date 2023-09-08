@@ -99,9 +99,7 @@ namespace CarReportSystem {
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btConnection = new System.Windows.Forms.Button();
-            this.infosys202323DataSet1 = new CarReportSystem.infosys202323DataSet();
             this.ofdImageFileOpen = new System.Windows.Forms.OpenFileDialog();
-            this.infosys202323DataSet2 = new CarReportSystem.infosys202323DataSet();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).BeginInit();
@@ -112,8 +110,6 @@ namespace CarReportSystem {
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableBindingNavigator)).BeginInit();
             this.carReportTableBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -781,19 +777,9 @@ namespace CarReportSystem {
             this.btConnection.UseVisualStyleBackColor = true;
             this.btConnection.Click += new System.EventHandler(this.btConnection_Click);
             // 
-            // infosys202323DataSet1
-            // 
-            this.infosys202323DataSet1.DataSetName = "infosys202323DataSet";
-            this.infosys202323DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ofdImageFileOpen
             // 
             this.ofdImageFileOpen.FileName = "openFileDialog1";
-            // 
-            // infosys202323DataSet2
-            // 
-            this.infosys202323DataSet2.DataSetName = "infosys202323DataSet";
-            this.infosys202323DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Form1
             // 
@@ -848,8 +834,6 @@ namespace CarReportSystem {
             this.carReportTableBindingNavigator.ResumeLayout(false);
             this.carReportTableBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carReportTableDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202323DataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -930,9 +914,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button btConnection;
-        private infosys202323DataSet infosys202323DataSet1;
         private System.Windows.Forms.OpenFileDialog ofdImageFileOpen;
-        private infosys202323DataSet infosys202323DataSet2;
     }
 }
 
