@@ -253,45 +253,6 @@ namespace CarReportSystem {
             tsTimeDisp.Text = DateTime.Now.ToString("yyyy年MM月dd日 HH時mm分ss秒");
         }
 
-        private void 保存SToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (sfdCarRepoSave.ShowDialog() == DialogResult.OK) {
-                try {
-                    //バイナリ形式でシリアル化
-                    var bf = new BinaryFormatter();
-                    using (FileStream fs = File.Open(sfdCarRepoSave.FileName, FileMode.Create)) {
-                        bf.Serialize(fs, CarReports);
-                    }
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void 開くOToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (ofdCarRepoOpen.ShowDialog() == DialogResult.OK) {
-                try {
-                    //逆シリアル化でバイナリ形式を取り込む
-                    var bf = new BinaryFormatter();
-                    using (FileStream fs = File.Open(ofdCarRepoOpen.FileName, FileMode.Open, FileAccess.Read)) {
-                        CarReports = (BindingList<CarReport>)bf.Deserialize(fs);
-                        dgvCarReports.DataSource = null;
-                        dgvCarReports.DataSource = CarReports;
-
-                        editItemsClear();//入力途中などのデータはすべてクリア
-                        dgvCarReports.Columns[5].Visible = false;   //画像項目非表示
-                        foreach (var carReport in CarReports) {
-                            setCbAuthor(carReport.Author);
-                            setCbCarName(carReport.CarName);
-                        }
-                    }
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
         private void dgvCarReports_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (dgvCarReports.Rows.Count != 0) {
                 dtpDate.Value = (DateTime)dgvCarReports.CurrentRow.Cells[1].Value;
@@ -352,6 +313,14 @@ namespace CarReportSystem {
                 setCbCarName(CarReport.CarName);
             }
        
+        }
+
+        private void btAutherSeach_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void btCarSeach_Click(object sender, EventArgs e) {
+
         }
     }
 }
