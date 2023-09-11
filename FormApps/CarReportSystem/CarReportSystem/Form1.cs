@@ -184,7 +184,6 @@ namespace CarReportSystem {
             dgvCarReports.CurrentRow.Cells[3].Value = getSelectedMaker();
             dgvCarReports.CurrentRow.Cells[4].Value = cbCarName.Text;
             dgvCarReports.CurrentRow.Cells[5].Value = tbReport.Text;
-//            dgvCarReports.CurrentRow.Cells[6].Value =
             
                 
                 //CarReports[dgvCarReports.CurrentRow.Index].Date = dtpDate.Value;
@@ -301,7 +300,7 @@ namespace CarReportSystem {
                 cbCarName.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
                 tbReport.Text = dgvCarReports.CurrentRow.Cells[5].Value.ToString();
 
-             //   pbCarImage.Image = !dgvCarReports.CurrentRow.Cells[6].Value.Equals(DBNull.Value) ?
+             //(↓と同じ)   pbCarImage.Image = !dgvCarReports.CurrentRow.Cells[6].Value.Equals(DBNull.Value) ?
              //                       ByteArrayToImage((Byte[])dgvCarReports.CurrentRow.Cells[6].Value) : null;
 
 
@@ -342,9 +341,17 @@ namespace CarReportSystem {
 
         //接続ボタンイベントハンドラ
         private void btConnection_Click(object sender, EventArgs e) {
-            // TODO: このコード行はデータを 'infosys202300DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            // TODO: このコード行はデータを 'infosys202300DataSet.CarReportTable'
+            // テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableTableAdapter.Fill(this.infosys202323DataSet.CarReportTable);
             dgvCarReports.ClearSelection();//選択解除
+
+
+            foreach (var CarReport in infosys202323DataSet.CarReportTable) {
+                setCbAuthor(CarReport.Auther);
+                setCbCarName(CarReport.CarName);
+            }
+       
         }
     }
 }
