@@ -300,27 +300,42 @@ namespace CarReportSystem {
 
         }
 
-        //接続ボタンイベントハンドラ
-        private void btConnection_Click(object sender, EventArgs e) {
+        private void 接続NToolStripMenuItem_Click(object sender, EventArgs e) {
+            //接続ボタンイベントハンドラ
             // TODO: このコード行はデータを 'infosys202300DataSet.CarReportTable'
             // テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableTableAdapter.Fill(this.infosys202323DataSet.CarReportTable);
             dgvCarReports.ClearSelection();//選択解除
 
-
             foreach (var CarReport in infosys202323DataSet.CarReportTable) {
-                setCbAuthor(CarReport.Auther);
-                setCbCarName(CarReport.CarName);
+                    setCbAuthor(CarReport.Auther);
+                    setCbCarName(CarReport.CarName);
+                }
             }
-       
+
+
+        private void btAuthorSearch_Click(object sender, EventArgs e) {
+           // carReportTableTableAdapter.FillByAuthor(this.infosys202323DataSet.CarReportTable, tbAuthorSearch.Text);
         }
 
-        private void btAutherSeach_Click(object sender, EventArgs e) {
-            
+
+
+        private void btCarNameSearch_Click(object sender, EventArgs e) {
+            //carReportTableTableAdapter.FillCarName(this.infosys202323DataSet.CarReportTable, tbCarNameSeach.Text);
         }
 
-        private void btCarSeach_Click(object sender, EventArgs e) {
 
+
+        private void dateTimePickerSearch_Click(object sender, EventArgs e) {
+            //carReportTableTableAdapter.FillByDateToDate(this.infosys202323DataSet.CarReportTable,dtpDateSearchS)
         }
+
+
+
+        private void btDateSearch_Click(object sender, EventArgs e) {
+            carReportTableTableAdapter.FillByDate(this.infosys202323DataSet.CarReportTable, dateTimePickerSearch.ToString());
+        }
+
+        
     }
 }
