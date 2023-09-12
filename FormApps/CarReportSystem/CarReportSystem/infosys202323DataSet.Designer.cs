@@ -1017,8 +1017,9 @@ SELECT id, Date, Auther, Maker, CarName, Report, Image FROM CarReportTable WHERE
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT                      id, Date, Auther, Maker, CarName, Report, Image\r\nFROM" +
                 "                         CarReportTable\r\nWHERE                       (Auther LIK" +
-                "E N\'N% +@auther +N%\')";
+                "E N\'%\' + @auther + N\'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@auther", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Auther", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT                      id, Date, Auther, Maker, CarName, Report, Image\r\nFROM" +
@@ -1038,8 +1039,9 @@ SELECT id, Date, Auther, Maker, CarName, Report, Image FROM CarReportTable WHERE
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT                      id, Date, Auther, Maker, CarName, Report, Image\r\nFROM" +
                 "                         CarReportTable\r\nWHERE                       (CarName LI" +
-                "KE N\'N% +@carname +N%\')";
+                "KE N\'%\' + @carname + N\'%\')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@carname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CarName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1070,8 +1072,14 @@ SELECT id, Date, Auther, Maker, CarName, Report, Image FROM CarReportTable WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAuthor(infosys202323DataSet.CarReportTableDataTable dataTable) {
+        public virtual int FillByAuthor(infosys202323DataSet.CarReportTableDataTable dataTable, string auther) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((auther == null)) {
+                throw new global::System.ArgumentNullException("auther");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(auther));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1127,8 +1135,14 @@ SELECT id, Date, Auther, Maker, CarName, Report, Image FROM CarReportTable WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillCarName(infosys202323DataSet.CarReportTableDataTable dataTable) {
+        public virtual int FillCarName(infosys202323DataSet.CarReportTableDataTable dataTable, string carname) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((carname == null)) {
+                throw new global::System.ArgumentNullException("carname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(carname));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

@@ -315,27 +315,25 @@ namespace CarReportSystem {
 
 
         private void btAuthorSearch_Click(object sender, EventArgs e) {
-           // carReportTableTableAdapter.FillByAuthor(this.infosys202323DataSet.CarReportTable, tbAuthorSearch.Text);
+            carReportTableTableAdapter.FillByAuthor(this.infosys202323DataSet.CarReportTable, tbAuthorSearch.Text);
         }
 
 
 
         private void btCarNameSearch_Click(object sender, EventArgs e) {
-            //carReportTableTableAdapter.FillCarName(this.infosys202323DataSet.CarReportTable, tbCarNameSeach.Text);
+            carReportTableTableAdapter.FillCarName(this.infosys202323DataSet.CarReportTable, tbCarNameSeach.Text);
         }
 
 
 
         private void dateTimePickerSearch_Click(object sender, EventArgs e) {
-            //carReportTableTableAdapter.FillByDateToDate(this.infosys202323DataSet.CarReportTable,dtpDateSearchS)
+            //carReportTableTableAdapter.FillByDateToDate(this.infosys202323DataSet.CarReportTable);
         }
 
 
 
         private void btDateSearch_Click(object sender, EventArgs e) {
             carReportTableTableAdapter.FillByDate(this.infosys202323DataSet.CarReportTable, dateTimePickerSearch.ToString());
-        }
-
-        
+        }    
     }
 }
