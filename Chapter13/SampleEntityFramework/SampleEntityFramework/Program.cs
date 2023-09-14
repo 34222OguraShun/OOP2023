@@ -244,11 +244,9 @@ namespace SampleEntityFramework {
 
         private static void Exercise1_3() {
             using (var db = new BooksDbContext()) {
-                var book = db.Books.SingleOrDefault(x => x.Id == 3);
-                if (book != null) {
-                    db.Books.Remove(book);
-                    db.SaveChanges();
-
+                var books = db.Books.Where(b => b.Title.Length == db.Books.Max(x => x.Title.Length));
+                foreach (var book in GetBooks()) {
+                    Console.WriteLine("{0}{1}{2}{3:yyyy/MM/dd})", book.Title, book.PublishedYear, book.Author.Name, book.Author.Birthday);
                 }
             }
         }
