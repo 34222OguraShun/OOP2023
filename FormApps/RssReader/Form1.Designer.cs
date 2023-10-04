@@ -74,6 +74,7 @@ namespace RssReader {
             this.btAdd.TabIndex = 4;
             this.btAdd.Text = "登録";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // Form1
             // 

@@ -21,6 +21,12 @@ namespace RssReader {
         }
 
         private void btGet_Click(object sender, EventArgs e) {
+            if (tbUrl.Text == "") {
+                return;
+            }
+
+
+            
             using (var wc = new WebClient()) {
                 var url = wc.OpenRead(tbUrl.Text);
                 XDocument xdoc = XDocument.Load(url);
@@ -40,6 +46,10 @@ namespace RssReader {
 
         private void lbRssTitle_Click(object sender, EventArgs e) {
             wbBrowser.Navigate(ItemDatas[lbRssTitle.SelectedIndex].Link);
+        }
+
+        private void btAdd_Click(object sender, EventArgs e) {
+
         }
     }
 }
