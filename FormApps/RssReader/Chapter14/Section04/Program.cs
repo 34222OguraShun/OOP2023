@@ -14,31 +14,15 @@ namespace Section04 {
             var results = GetWeatherReportFromYahoo(4610);
             foreach (var s in results) {
                 Console.WriteLine(s);
-                Console.ReadLine();
             }
-
-
-
-            // OpenReadSample();
+            Console.WriteLine();
         }
-
-
-        //List14-18
-        private static void OpenReadSample() {
-            var wc = new WebClient();
-            using (var stream = wc.OpenRead(@"http://gihyo.jp/book/list"))
-            using (var sr = new StreamReader(stream, Encoding.UTF8)) {
-                string html = sr.ReadToEnd();
-                Console.WriteLine(html);
-            }
-        }
-
-
-        //List14-19
+        //List 14-19
         private static IEnumerable<string> GetWeatherReportFromYahoo(int cityCode) {
             using (var wc = new WebClient()) {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
-                var uriString = string.Format(@"https://news.yahoo.co.jp/rss/media/kurumans/all.xml", cityCode);
+                var uriString = string.Format(
+                    @"https://news.yahoo.co.jp/rss/media/kurumans/all.xml", cityCode);
                 var url = new Uri(uriString);
                 var stream = wc.OpenRead(url);
 
@@ -50,5 +34,18 @@ namespace Section04 {
                 }
             }
         }
+
+        //List 14-18
+        private static void OpenReadSample() {
+            var wc = new WebClient();
+            using (var stream = wc.OpenRead(@"http://gihyo.jp/book/list"))
+            using (var sr = new StreamReader(stream,Encoding.UTF8 )) {
+                string html = sr.ReadToEnd();
+                Console.WriteLine(html);
+            }
+        }
+
+        
+
     }
 }

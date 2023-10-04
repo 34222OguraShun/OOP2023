@@ -1,5 +1,5 @@
 ﻿
-namespace Sepction01 {
+namespace Section01 {
     partial class Form1 {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -11,7 +11,7 @@ namespace Sepction01 {
         /// </summary>
         /// <param name="disposing">マネージド リソースを破棄する場合は true を指定し、その他の場合は false を指定します。</param>
         protected override void Dispose(bool disposing) {
-            if (disposing && ( components != null )) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -30,22 +30,21 @@ namespace Sepction01 {
             // 
             // btRunNotepad
             // 
-            this.btRunNotepad.Location = new System.Drawing.Point(26, 12);
+            this.btRunNotepad.Location = new System.Drawing.Point(55, 31);
             this.btRunNotepad.Name = "btRunNotepad";
-            this.btRunNotepad.Size = new System.Drawing.Size(75, 23);
+            this.btRunNotepad.Size = new System.Drawing.Size(170, 44);
             this.btRunNotepad.TabIndex = 0;
-            this.btRunNotepad.Text = "メモ帳起動";
+            this.btRunNotepad.Text = "RunNotepad";
             this.btRunNotepad.UseVisualStyleBackColor = true;
             this.btRunNotepad.Click += new System.EventHandler(this.btRunNotepad_Click);
             // 
             // btRunAndWaitNotepad
             // 
-            this.btRunAndWaitNotepad.Location = new System.Drawing.Point(26, 71);
+            this.btRunAndWaitNotepad.Location = new System.Drawing.Point(56, 108);
             this.btRunAndWaitNotepad.Name = "btRunAndWaitNotepad";
-            this.btRunAndWaitNotepad.Size = new System.Drawing.Size(75, 23);
+            this.btRunAndWaitNotepad.Size = new System.Drawing.Size(169, 45);
             this.btRunAndWaitNotepad.TabIndex = 1;
             this.btRunAndWaitNotepad.Text = "RunAndWaitNotepad";
-            this.btRunAndWaitNotepad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btRunAndWaitNotepad.UseVisualStyleBackColor = true;
             this.btRunAndWaitNotepad.Click += new System.EventHandler(this.btRunAndWaitNotepad_Click);
             // 
@@ -53,7 +52,7 @@ namespace Sepction01 {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(134, 117);
+            this.ClientSize = new System.Drawing.Size(280, 272);
             this.Controls.Add(this.btRunAndWaitNotepad);
             this.Controls.Add(this.btRunNotepad);
             this.Name = "Form1";
