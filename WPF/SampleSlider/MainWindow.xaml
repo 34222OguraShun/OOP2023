@@ -8,6 +8,7 @@
         Title="MainWindow" Height="100" Width="300">
     <StackPanel>
         <Slider x:Name="SampleSlider"/>
-        <Label Content="{Binding ElementName=SampleSlider,Path=Value}"/>
+        <Label Content="{Binding ElementName=SampleSlider,Path=Value, Mode=OneWay}"/>
+        <TextBox  x:Name="textNum"  TextWrapping="Wrap" Text="{Binding ElementName=SampleSlider,Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
 </Window>

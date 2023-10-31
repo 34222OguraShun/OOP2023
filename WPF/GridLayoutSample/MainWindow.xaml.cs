@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GirdLayoutSample {
+namespace GridLayoutSample {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
@@ -43,8 +43,7 @@ namespace GirdLayoutSample {
         }
 
         private void seasonComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            seasonTextBlock.Text = (string)( (ComboBoxItem)
-                seasonComboBox.SelectedItem ).Content;
+            seasonTextBlock.Text = (string)((ComboBoxItem)(seasonComboBox.SelectedItem)).Content;
         }
     }
 }

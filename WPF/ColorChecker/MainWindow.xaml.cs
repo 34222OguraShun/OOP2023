@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SampleApplication {
+namespace ColorChecker {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
@@ -21,6 +21,5 @@ namespace SampleApplication {
         public MainWindow() {
             InitializeComponent();
         }
-
     }
 }

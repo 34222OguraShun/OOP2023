@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace GirdLayoutSample.Properties {
+namespace GridLayoutSample.Properties {
     /// <summary>
     ///   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
     /// </summary>
@@ -36,8 +36,8 @@ namespace GirdLayoutSample.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if (( resourceMan == null )) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GirdLayoutSample.Properties.Resources", typeof(Resources).Assembly);
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GridLayoutSample.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

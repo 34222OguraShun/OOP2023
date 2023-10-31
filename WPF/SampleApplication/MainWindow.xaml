@@ -6,19 +6,18 @@
         xmlns:local="clr-namespace:SampleApplication"
         mc:Ignorable="d"
         Title="SampleWindow" Height="350" Width="500" FontSize="14">
-    <DockPanel >
-        <TextBox DockPanel.Dock="Top"
-                 Text="ウィンドウの上に貼り付くテキスト ボックス" 
+    <DockPanel Margin="4">
+        <TextBox DockPanel.Dock="Top" 
+                 Text="ウィンドウの上に張り付くテキスト ボックス"
                  TextWrapping="Wrap" Margin="4" Padding="2"/>
         
         <TextBox DockPanel.Dock="Bottom"
-                 Text="ウィンドウの下に貼り付くテキスト ボックス" 
+                 Text="ウィンドウの下に張り付くテキスト ボックス" 
                  TextWrapping="Wrap" Margin="4" Padding="2"/>
-
-        <Button Content="多言語対応環境" 
-                Margin="4" Padding="8"/>
-
-        <TextBox Text="真ん中の領域いっぱいに広がるテキスト ボックス" 
+        
+        <Button Content="多言語対応環境" Margin="4" Padding="8"/>
+        
+        <TextBox Text="真ん中の領域いっぱいに広がるテキスト ボックス"
                  TextWrapping="Wrap" Margin="4" Padding="2"/>
         
     </DockPanel>
