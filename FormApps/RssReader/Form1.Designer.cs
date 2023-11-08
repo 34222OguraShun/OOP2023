@@ -28,13 +28,18 @@ namespace RssReader {
             this.btGet = new System.Windows.Forms.Button();
             this.lbRssTitle = new System.Windows.Forms.ListBox();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.btFaboriteAdd = new System.Windows.Forms.Button();
+            this.BtBusiness = new System.Windows.Forms.RadioButton();
+            this.BtEntertainment = new System.Windows.Forms.RadioButton();
+            this.BtSports = new System.Windows.Forms.RadioButton();
+            this.BtIT = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbUrl
             // 
             this.tbUrl.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbUrl.Location = new System.Drawing.Point(32, 30);
+            this.tbUrl.Location = new System.Drawing.Point(32, 12);
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(540, 31);
             this.tbUrl.TabIndex = 0;
@@ -53,36 +58,92 @@ namespace RssReader {
             // 
             this.lbRssTitle.FormattingEnabled = true;
             this.lbRssTitle.ItemHeight = 12;
-            this.lbRssTitle.Location = new System.Drawing.Point(12, 91);
+            this.lbRssTitle.Location = new System.Drawing.Point(12, 164);
             this.lbRssTitle.Name = "lbRssTitle";
-            this.lbRssTitle.Size = new System.Drawing.Size(641, 196);
+            this.lbRssTitle.Size = new System.Drawing.Size(641, 172);
             this.lbRssTitle.TabIndex = 2;
-            this.lbRssTitle.SelectedIndexChanged += new System.EventHandler(this.lbRssTitle_SelectedIndexChanged);
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(12, 303);
+            this.wbBrowser.Location = new System.Drawing.Point(12, 352);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.Size = new System.Drawing.Size(641, 340);
+            this.wbBrowser.Size = new System.Drawing.Size(641, 291);
             this.wbBrowser.TabIndex = 3;
             // 
-            // btAdd
+            // btFaboriteAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(578, 49);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 27);
-            this.btAdd.TabIndex = 4;
-            this.btAdd.Text = "登録";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            this.btFaboriteAdd.Location = new System.Drawing.Point(578, 113);
+            this.btFaboriteAdd.Name = "btFaboriteAdd";
+            this.btFaboriteAdd.Size = new System.Drawing.Size(75, 44);
+            this.btFaboriteAdd.TabIndex = 4;
+            this.btFaboriteAdd.Text = "お気に入り登録";
+            this.btFaboriteAdd.UseVisualStyleBackColor = true;
+            this.btFaboriteAdd.Click += new System.EventHandler(this.btFaboriteAdd_Click);
+            // 
+            // BtBusiness
+            // 
+            this.BtBusiness.AutoSize = true;
+            this.BtBusiness.Location = new System.Drawing.Point(81, 70);
+            this.BtBusiness.Name = "BtBusiness";
+            this.BtBusiness.Size = new System.Drawing.Size(47, 16);
+            this.BtBusiness.TabIndex = 5;
+            this.BtBusiness.TabStop = true;
+            this.BtBusiness.Text = "経済";
+            this.BtBusiness.UseVisualStyleBackColor = true;
+            // 
+            // BtEntertainment
+            // 
+            this.BtEntertainment.AutoSize = true;
+            this.BtEntertainment.Location = new System.Drawing.Point(210, 70);
+            this.BtEntertainment.Name = "BtEntertainment";
+            this.BtEntertainment.Size = new System.Drawing.Size(57, 16);
+            this.BtEntertainment.TabIndex = 6;
+            this.BtEntertainment.TabStop = true;
+            this.BtEntertainment.Text = "エンタメ";
+            this.BtEntertainment.UseVisualStyleBackColor = true;
+            // 
+            // BtSports
+            // 
+            this.BtSports.AutoSize = true;
+            this.BtSports.Location = new System.Drawing.Point(383, 70);
+            this.BtSports.Name = "BtSports";
+            this.BtSports.Size = new System.Drawing.Size(61, 16);
+            this.BtSports.TabIndex = 7;
+            this.BtSports.TabStop = true;
+            this.BtSports.Text = "スポーツ";
+            this.BtSports.UseVisualStyleBackColor = true;
+            // 
+            // BtIT
+            // 
+            this.BtIT.AutoSize = true;
+            this.BtIT.Location = new System.Drawing.Point(554, 70);
+            this.BtIT.Name = "BtIT";
+            this.BtIT.Size = new System.Drawing.Size(33, 16);
+            this.BtIT.TabIndex = 8;
+            this.BtIT.TabStop = true;
+            this.BtIT.Text = "IT";
+            this.BtIT.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.Location = new System.Drawing.Point(318, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(234, 31);
+            this.textBox1.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 691);
-            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BtIT);
+            this.Controls.Add(this.BtSports);
+            this.Controls.Add(this.BtEntertainment);
+            this.Controls.Add(this.BtBusiness);
+            this.Controls.Add(this.btFaboriteAdd);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.lbRssTitle);
             this.Controls.Add(this.btGet);
@@ -100,7 +161,12 @@ namespace RssReader {
         private System.Windows.Forms.Button btGet;
         private System.Windows.Forms.ListBox lbRssTitle;
         private System.Windows.Forms.WebBrowser wbBrowser;
-        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btFaboriteAdd;
+        private System.Windows.Forms.RadioButton BtBusiness;
+        private System.Windows.Forms.RadioButton BtEntertainment;
+        private System.Windows.Forms.RadioButton BtSports;
+        private System.Windows.Forms.RadioButton BtIT;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

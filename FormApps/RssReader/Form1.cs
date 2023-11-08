@@ -25,8 +25,6 @@ namespace RssReader {
                 return;
             }
 
-
-            
             using (var wc = new WebClient()) {
                 var url = wc.OpenRead(tbUrl.Text);
                 XDocument xdoc = XDocument.Load(url);
@@ -48,11 +46,23 @@ namespace RssReader {
             wbBrowser.Navigate(ItemDatas[lbRssTitle.SelectedIndex].Link);
         }
 
-        private void btAdd_Click(object sender, EventArgs e) {
-
+        private void BtBusiness_CheckedChanged(object sender, EventArgs e) {
+            tbUrl.Text = "https://news.yahoo.co.jp/rss/topics/business.xml";
         }
 
-        private void lbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
+        private void BtEntertainment_CheckedChanged(object sender, EventArgs e) {
+            tbUrl.Text = "https://news.yahoo.co.jp/rss/topics/entertainment.xml";
+        }
+
+        private void BtSports_CheckedChanged(object sender, EventArgs e) {
+            tbUrl.Text = "https://news.yahoo.co.jp/rss/topics/sports.xml";
+        }
+
+        private void BtIT_CheckedChanged(object sender, EventArgs e) {
+            tbUrl.Text = "https://news.yahoo.co.jp/rss/topics/it.xml";
+        }
+
+        private void btFaboriteAdd_Click(object sender, EventArgs e) {
 
         }
     }
