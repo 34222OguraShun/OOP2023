@@ -28,18 +28,22 @@ namespace RssReader {
             this.btGet = new System.Windows.Forms.Button();
             this.lbRssTitle = new System.Windows.Forms.ListBox();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
-            this.btFaboriteAdd = new System.Windows.Forms.Button();
-            this.BtBusiness = new System.Windows.Forms.RadioButton();
-            this.BtEntertainment = new System.Windows.Forms.RadioButton();
-            this.BtSports = new System.Windows.Forms.RadioButton();
-            this.BtIT = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbIT = new System.Windows.Forms.RadioButton();
+            this.rbEntertainment = new System.Windows.Forms.RadioButton();
+            this.rbSports = new System.Windows.Forms.RadioButton();
+            this.rbBusiness = new System.Windows.Forms.RadioButton();
+            this.btFavorite = new System.Windows.Forms.Button();
+            this.tbFavoriteTitle = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelURL = new System.Windows.Forms.Label();
+            this.tbFavoriteURL = new System.Windows.Forms.TextBox();
+            this.cbFavoriteView = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbUrl
             // 
             this.tbUrl.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbUrl.Location = new System.Drawing.Point(32, 12);
+            this.tbUrl.Location = new System.Drawing.Point(12, 12);
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(540, 31);
             this.tbUrl.TabIndex = 0;
@@ -58,92 +62,146 @@ namespace RssReader {
             // 
             this.lbRssTitle.FormattingEnabled = true;
             this.lbRssTitle.ItemHeight = 12;
-            this.lbRssTitle.Location = new System.Drawing.Point(12, 164);
+            this.lbRssTitle.Location = new System.Drawing.Point(30, 117);
             this.lbRssTitle.Name = "lbRssTitle";
-            this.lbRssTitle.Size = new System.Drawing.Size(641, 172);
+            this.lbRssTitle.Size = new System.Drawing.Size(315, 256);
             this.lbRssTitle.TabIndex = 2;
+            this.lbRssTitle.Click += new System.EventHandler(this.lbRssTitle_Click);
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(12, 352);
+            this.wbBrowser.Location = new System.Drawing.Point(30, 398);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.Size = new System.Drawing.Size(641, 291);
+            this.wbBrowser.ScriptErrorsSuppressed = true;
+            this.wbBrowser.Size = new System.Drawing.Size(646, 270);
             this.wbBrowser.TabIndex = 3;
             // 
-            // btFaboriteAdd
+            // rbIT
             // 
-            this.btFaboriteAdd.Location = new System.Drawing.Point(578, 113);
-            this.btFaboriteAdd.Name = "btFaboriteAdd";
-            this.btFaboriteAdd.Size = new System.Drawing.Size(75, 44);
-            this.btFaboriteAdd.TabIndex = 4;
-            this.btFaboriteAdd.Text = "お気に入り登録";
-            this.btFaboriteAdd.UseVisualStyleBackColor = true;
-            this.btFaboriteAdd.Click += new System.EventHandler(this.btFaboriteAdd_Click);
+            this.rbIT.AutoSize = true;
+            this.rbIT.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rbIT.Location = new System.Drawing.Point(529, 71);
+            this.rbIT.Name = "rbIT";
+            this.rbIT.Size = new System.Drawing.Size(48, 28);
+            this.rbIT.TabIndex = 0;
+            this.rbIT.TabStop = true;
+            this.rbIT.Text = "IT";
+            this.rbIT.UseVisualStyleBackColor = true;
+            this.rbIT.CheckedChanged += new System.EventHandler(this.rbIT_CheckedChanged);
             // 
-            // BtBusiness
+            // rbEntertainment
             // 
-            this.BtBusiness.AutoSize = true;
-            this.BtBusiness.Location = new System.Drawing.Point(81, 70);
-            this.BtBusiness.Name = "BtBusiness";
-            this.BtBusiness.Size = new System.Drawing.Size(47, 16);
-            this.BtBusiness.TabIndex = 5;
-            this.BtBusiness.TabStop = true;
-            this.BtBusiness.Text = "経済";
-            this.BtBusiness.UseVisualStyleBackColor = true;
+            this.rbEntertainment.AutoSize = true;
+            this.rbEntertainment.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rbEntertainment.Location = new System.Drawing.Point(189, 71);
+            this.rbEntertainment.Name = "rbEntertainment";
+            this.rbEntertainment.Size = new System.Drawing.Size(98, 28);
+            this.rbEntertainment.TabIndex = 1;
+            this.rbEntertainment.TabStop = true;
+            this.rbEntertainment.Text = "エンタメ";
+            this.rbEntertainment.UseVisualStyleBackColor = true;
+            this.rbEntertainment.CheckedChanged += new System.EventHandler(this.rbEntertainment_CheckedChanged);
             // 
-            // BtEntertainment
+            // rbSports
             // 
-            this.BtEntertainment.AutoSize = true;
-            this.BtEntertainment.Location = new System.Drawing.Point(210, 70);
-            this.BtEntertainment.Name = "BtEntertainment";
-            this.BtEntertainment.Size = new System.Drawing.Size(57, 16);
-            this.BtEntertainment.TabIndex = 6;
-            this.BtEntertainment.TabStop = true;
-            this.BtEntertainment.Text = "エンタメ";
-            this.BtEntertainment.UseVisualStyleBackColor = true;
+            this.rbSports.AutoSize = true;
+            this.rbSports.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rbSports.Location = new System.Drawing.Point(376, 71);
+            this.rbSports.Name = "rbSports";
+            this.rbSports.Size = new System.Drawing.Size(104, 28);
+            this.rbSports.TabIndex = 3;
+            this.rbSports.TabStop = true;
+            this.rbSports.Text = "スポーツ";
+            this.rbSports.UseVisualStyleBackColor = true;
+            this.rbSports.CheckedChanged += new System.EventHandler(this.rbSports_CheckedChanged);
             // 
-            // BtSports
+            // rbBusiness
             // 
-            this.BtSports.AutoSize = true;
-            this.BtSports.Location = new System.Drawing.Point(383, 70);
-            this.BtSports.Name = "BtSports";
-            this.BtSports.Size = new System.Drawing.Size(61, 16);
-            this.BtSports.TabIndex = 7;
-            this.BtSports.TabStop = true;
-            this.BtSports.Text = "スポーツ";
-            this.BtSports.UseVisualStyleBackColor = true;
+            this.rbBusiness.AutoSize = true;
+            this.rbBusiness.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rbBusiness.Location = new System.Drawing.Point(48, 71);
+            this.rbBusiness.Name = "rbBusiness";
+            this.rbBusiness.Size = new System.Drawing.Size(76, 28);
+            this.rbBusiness.TabIndex = 2;
+            this.rbBusiness.TabStop = true;
+            this.rbBusiness.Text = "経済";
+            this.rbBusiness.UseVisualStyleBackColor = true;
+            this.rbBusiness.CheckedChanged += new System.EventHandler(this.rbBusiness_CheckedChanged);
             // 
-            // BtIT
+            // btFavorite
             // 
-            this.BtIT.AutoSize = true;
-            this.BtIT.Location = new System.Drawing.Point(554, 70);
-            this.BtIT.Name = "BtIT";
-            this.BtIT.Size = new System.Drawing.Size(33, 16);
-            this.BtIT.TabIndex = 8;
-            this.BtIT.TabStop = true;
-            this.BtIT.Text = "IT";
-            this.BtIT.UseVisualStyleBackColor = true;
+            this.btFavorite.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btFavorite.Location = new System.Drawing.Point(578, 316);
+            this.btFavorite.Name = "btFavorite";
+            this.btFavorite.Size = new System.Drawing.Size(98, 44);
+            this.btFavorite.TabIndex = 6;
+            this.btFavorite.Text = "お気に入り登録";
+            this.btFavorite.UseVisualStyleBackColor = true;
+            this.btFavorite.Click += new System.EventHandler(this.btFavorite_Click);
             // 
-            // textBox1
+            // tbFavoriteTitle
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(318, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 31);
-            this.textBox1.TabIndex = 9;
+            this.tbFavoriteTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbFavoriteTitle.Location = new System.Drawing.Point(386, 172);
+            this.tbFavoriteTitle.Name = "tbFavoriteTitle";
+            this.tbFavoriteTitle.Size = new System.Drawing.Size(290, 31);
+            this.tbFavoriteTitle.TabIndex = 9;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelTitle.Location = new System.Drawing.Point(377, 145);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(81, 24);
+            this.labelTitle.TabIndex = 10;
+            this.labelTitle.Text = "タイトル";
+            // 
+            // labelURL
+            // 
+            this.labelURL.AutoSize = true;
+            this.labelURL.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelURL.Location = new System.Drawing.Point(382, 233);
+            this.labelURL.Name = "labelURL";
+            this.labelURL.Size = new System.Drawing.Size(53, 24);
+            this.labelURL.TabIndex = 11;
+            this.labelURL.Text = "URL";
+            // 
+            // tbFavoriteURL
+            // 
+            this.tbFavoriteURL.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbFavoriteURL.Location = new System.Drawing.Point(386, 260);
+            this.tbFavoriteURL.Name = "tbFavoriteURL";
+            this.tbFavoriteURL.Size = new System.Drawing.Size(290, 31);
+            this.tbFavoriteURL.TabIndex = 12;
+            // 
+            // cbFavoriteView
+            // 
+            this.cbFavoriteView.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFavoriteView.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cbFavoriteView.FormattingEnabled = true;
+            this.cbFavoriteView.Location = new System.Drawing.Point(386, 327);
+            this.cbFavoriteView.Name = "cbFavoriteView";
+            this.cbFavoriteView.Size = new System.Drawing.Size(173, 24);
+            this.cbFavoriteView.TabIndex = 13;
+            this.cbFavoriteView.SelectedIndexChanged += new System.EventHandler(this.cbFavoriteView_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 691);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.BtIT);
-            this.Controls.Add(this.BtSports);
-            this.Controls.Add(this.BtEntertainment);
-            this.Controls.Add(this.BtBusiness);
-            this.Controls.Add(this.btFaboriteAdd);
+            this.ClientSize = new System.Drawing.Size(708, 691);
+            this.Controls.Add(this.rbIT);
+            this.Controls.Add(this.rbEntertainment);
+            this.Controls.Add(this.rbBusiness);
+            this.Controls.Add(this.rbSports);
+            this.Controls.Add(this.cbFavoriteView);
+            this.Controls.Add(this.tbFavoriteURL);
+            this.Controls.Add(this.labelURL);
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.tbFavoriteTitle);
+            this.Controls.Add(this.btFavorite);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.lbRssTitle);
             this.Controls.Add(this.btGet);
@@ -161,12 +219,16 @@ namespace RssReader {
         private System.Windows.Forms.Button btGet;
         private System.Windows.Forms.ListBox lbRssTitle;
         private System.Windows.Forms.WebBrowser wbBrowser;
-        private System.Windows.Forms.Button btFaboriteAdd;
-        private System.Windows.Forms.RadioButton BtBusiness;
-        private System.Windows.Forms.RadioButton BtEntertainment;
-        private System.Windows.Forms.RadioButton BtSports;
-        private System.Windows.Forms.RadioButton BtIT;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbIT;
+        private System.Windows.Forms.RadioButton rbEntertainment;
+        private System.Windows.Forms.RadioButton rbSports;
+        private System.Windows.Forms.RadioButton rbBusiness;
+        private System.Windows.Forms.Button btFavorite;
+        private System.Windows.Forms.TextBox tbFavoriteTitle;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelURL;
+        private System.Windows.Forms.TextBox tbFavoriteURL;
+        private System.Windows.Forms.ComboBox cbFavoriteView;
     }
 }
 

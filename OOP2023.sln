@@ -193,6 +193,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridLayoutSample", "WPF\Gri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUnitConverter", "WPF\SampleUnitConverter\SampleUnitConverter.csproj", "{3142DE5E-8653-4BA9-9631-BDDFD334EA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VIsibilityConverter", "WPF\VIsibilityConverter\VIsibilityConverter.csproj", "{D0FDDF41-FE05-4329-9590-9823C19D6666}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -451,6 +453,10 @@ Global
 		{3142DE5E-8653-4BA9-9631-BDDFD334EA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3142DE5E-8653-4BA9-9631-BDDFD334EA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3142DE5E-8653-4BA9-9631-BDDFD334EA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0FDDF41-FE05-4329-9590-9823C19D6666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FDDF41-FE05-4329-9590-9823C19D6666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FDDF41-FE05-4329-9590-9823C19D6666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FDDF41-FE05-4329-9590-9823C19D6666}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -534,6 +540,7 @@ Global
 		{20448056-11DE-4BD4-9EC9-784436020831} = {72D6A5F9-F0DE-4E05-A0F0-51CF93D3E08B}
 		{BB31FED3-90AD-4628-AA54-DD710BFF73E6} = {72D6A5F9-F0DE-4E05-A0F0-51CF93D3E08B}
 		{3142DE5E-8653-4BA9-9631-BDDFD334EA55} = {72D6A5F9-F0DE-4E05-A0F0-51CF93D3E08B}
+		{D0FDDF41-FE05-4329-9590-9823C19D6666} = {72D6A5F9-F0DE-4E05-A0F0-51CF93D3E08B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01C09EB8-86E9-4237-8533-7BFDE2339810}

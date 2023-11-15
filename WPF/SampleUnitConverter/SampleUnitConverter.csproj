@@ -57,6 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="DistanceUnit.cs" />
+    <Compile Include="PoundUnit.cs" />
+    <Compile Include="WeightUnit.cs" />
     <Compile Include="ImperialUnit.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="MetricUnit.cs" />
