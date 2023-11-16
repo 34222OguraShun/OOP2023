@@ -143,16 +143,16 @@ namespace RssReader {
             // tbFavoriteTitle
             // 
             this.tbFavoriteTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbFavoriteTitle.Location = new System.Drawing.Point(386, 172);
+            this.tbFavoriteTitle.Location = new System.Drawing.Point(376, 172);
             this.tbFavoriteTitle.Name = "tbFavoriteTitle";
-            this.tbFavoriteTitle.Size = new System.Drawing.Size(290, 31);
+            this.tbFavoriteTitle.Size = new System.Drawing.Size(300, 31);
             this.tbFavoriteTitle.TabIndex = 9;
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelTitle.Location = new System.Drawing.Point(377, 145);
+            this.labelTitle.Location = new System.Drawing.Point(372, 135);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(81, 24);
             this.labelTitle.TabIndex = 10;
@@ -162,7 +162,7 @@ namespace RssReader {
             // 
             this.labelURL.AutoSize = true;
             this.labelURL.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelURL.Location = new System.Drawing.Point(382, 233);
+            this.labelURL.Location = new System.Drawing.Point(372, 224);
             this.labelURL.Name = "labelURL";
             this.labelURL.Size = new System.Drawing.Size(53, 24);
             this.labelURL.TabIndex = 11;
@@ -171,9 +171,9 @@ namespace RssReader {
             // tbFavoriteURL
             // 
             this.tbFavoriteURL.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbFavoriteURL.Location = new System.Drawing.Point(386, 260);
+            this.tbFavoriteURL.Location = new System.Drawing.Point(376, 260);
             this.tbFavoriteURL.Name = "tbFavoriteURL";
-            this.tbFavoriteURL.Size = new System.Drawing.Size(290, 31);
+            this.tbFavoriteURL.Size = new System.Drawing.Size(300, 31);
             this.tbFavoriteURL.TabIndex = 12;
             // 
             // cbFavoriteView
