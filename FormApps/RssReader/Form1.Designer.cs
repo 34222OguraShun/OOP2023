@@ -38,6 +38,7 @@ namespace RssReader {
             this.labelURL = new System.Windows.Forms.Label();
             this.tbFavoriteURL = new System.Windows.Forms.TextBox();
             this.cbFavoriteView = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -64,17 +65,17 @@ namespace RssReader {
             this.lbRssTitle.ItemHeight = 12;
             this.lbRssTitle.Location = new System.Drawing.Point(30, 117);
             this.lbRssTitle.Name = "lbRssTitle";
-            this.lbRssTitle.Size = new System.Drawing.Size(315, 256);
+            this.lbRssTitle.Size = new System.Drawing.Size(314, 256);
             this.lbRssTitle.TabIndex = 2;
             this.lbRssTitle.Click += new System.EventHandler(this.lbRssTitle_Click);
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(30, 398);
+            this.wbBrowser.Location = new System.Drawing.Point(30, 389);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
             this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(646, 270);
+            this.wbBrowser.Size = new System.Drawing.Size(646, 279);
             this.wbBrowser.TabIndex = 3;
             // 
             // rbIT
@@ -132,7 +133,7 @@ namespace RssReader {
             // btFavorite
             // 
             this.btFavorite.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btFavorite.Location = new System.Drawing.Point(578, 316);
+            this.btFavorite.Location = new System.Drawing.Point(578, 329);
             this.btFavorite.Name = "btFavorite";
             this.btFavorite.Size = new System.Drawing.Size(98, 44);
             this.btFavorite.TabIndex = 6;
@@ -181,17 +182,28 @@ namespace RssReader {
             this.cbFavoriteView.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFavoriteView.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cbFavoriteView.FormattingEnabled = true;
-            this.cbFavoriteView.Location = new System.Drawing.Point(386, 327);
+            this.cbFavoriteView.Location = new System.Drawing.Point(379, 343);
             this.cbFavoriteView.Name = "cbFavoriteView";
-            this.cbFavoriteView.Size = new System.Drawing.Size(173, 24);
+            this.cbFavoriteView.Size = new System.Drawing.Size(176, 24);
             this.cbFavoriteView.TabIndex = 13;
             this.cbFavoriteView.SelectedIndexChanged += new System.EventHandler(this.cbFavoriteView_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(375, 316);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "登録リスト";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 691);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rbIT);
             this.Controls.Add(this.rbEntertainment);
             this.Controls.Add(this.rbBusiness);
@@ -207,7 +219,7 @@ namespace RssReader {
             this.Controls.Add(this.btGet);
             this.Controls.Add(this.tbUrl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "RssReder";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +241,7 @@ namespace RssReader {
         private System.Windows.Forms.Label labelURL;
         private System.Windows.Forms.TextBox tbFavoriteURL;
         private System.Windows.Forms.ComboBox cbFavoriteView;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -84,10 +84,9 @@ namespace RssReader {
         }
 
         private void btFavorite_Click(object sender, EventArgs e) {
-
-            FavoriteSet favorite = new FavoriteSet(tbFavoriteURL.Text, tbFavoriteTitle.Text);
+                FavoriteSet favorite = new FavoriteSet(tbFavoriteURL.Text, tbFavoriteTitle.Text);
                 cbFavoriteView.Items.Add(favorite);
-                favoriteDict.Add(tbFavoriteURL.Text, tbFavoriteTitle.Text);
+                favoriteDict.Add(tbFavoriteURL.Text, tbFavoriteTitle.Text);                
         }
 
         private void cbFavoriteView_SelectedIndexChanged(object sender, EventArgs e) {
