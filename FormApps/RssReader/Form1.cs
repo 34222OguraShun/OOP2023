@@ -96,5 +96,3 @@ namespace RssReader {
         }
     }
 }
-
-//if (favoriteDict.ContainsKey(tbRegisterURL.Text) || favoriteDict.ContainsValue(tbRegisterName.Text))
